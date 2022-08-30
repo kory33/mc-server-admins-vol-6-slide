@@ -94,7 +94,7 @@
          - [Stop Sound](https://wiki.vg/index.php?title=Protocol&oldid=16907#Stop_Sound) パケットを考える
          - (TODO: 表を挿入して口頭で説明する)
 
-   - 例
+   - パケットのやり取りの例
      - キープアライブ
        - クライアントは、「まだ接続してますよ」という確証をサーバーに与えるために、キープアライブ (Keep alive) パケットと呼ばれる、サーバーから定期的に送られてくるパケットに対して返事をする必要がある
          - [Keep Alive (Clientbound)](https://wiki.vg/index.php?title=Protocol&oldid=17749#Keep_Alive_.28clientbound.29) がランダムな `Keep Alive ID` とともに送られてくる
@@ -118,7 +118,7 @@
  - Minecraft プロトコルの知識があれば何ができるか？
    - BungeeCord
      - 部分的なプロトコルの知識が必要
-     - (シーケンス図で)「プレーヤーがサーバー S1 から S2 に移動したとき、S1 に Disconnect パケットを送りつつ、プレーヤーには change world パケットを送り、S2 のログイン処理を肩代わりし、S2 の地形データをクライアントに受け流す」
+     - (シーケンス図で)「プレーヤーがサーバー S1 から S2 に移動したとき、S1 に Disconnect パケットを送りつつ、プレーヤーには [Respawn](https://wiki.vg/index.php?title=Protocol&oldid=17749#Respawn) パケットを送り、S2 へのログイン処理を肩代わりし、S2 の地形データをクライアントに受け流す」
 
    - ProtocolLib
      - Spigot サーバー (Minecraft 互換サーバーであって、プラグイン機構、プラグイン向けAPIとその実装が追加されているもの) 上で動くプラグインで、次の機能を他のプラグインに提供する：
