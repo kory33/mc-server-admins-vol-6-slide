@@ -95,9 +95,11 @@
          - (TODO: 表を挿入して口頭で説明する)
 
    - 例
-     - ハートビート
-       - クライアントは、「まだ接続してますよ」という確証をサーバーに与えるために、キープアライブ (Keep alive) パケットと呼ばれる、サーバーから定期的に送られてくるパケットに対して返事をする必要がある (もし返事を忘れたりするとサーバーによって強制切断される)
-         - TODO: 具体的なパケット名を出して説明する
+     - キープアライブ
+       - クライアントは、「まだ接続してますよ」という確証をサーバーに与えるために、キープアライブ (Keep alive) パケットと呼ばれる、サーバーから定期的に送られてくるパケットに対して返事をする必要がある
+         - [Keep Alive (Clientbound)](https://wiki.vg/index.php?title=Protocol&oldid=17749#Keep_Alive_.28clientbound.29) がランダムな `Keep Alive ID` とともに送られてくる
+         - クライアントは、送られてきた `Keep Alive ID` を 30 秒以内に [Keep Alive (Serverbound)](https://wiki.vg/index.php?title=Protocol&oldid=17749#Keep_Alive_.28serverbound.29) パケットにて送り返さねばならない
+         - クライアントが 30 秒返事をしなかった場合、サーバーは [Disconnect](https://wiki.vg/index.php?title=Protocol&oldid=17749#Disconnect_.28play.29) パケットを送出し、TCPコネクションを切断する
 
      - エンティティ (プレーヤー含む) の位置情報と速度情報のやり取り
        - プレーヤーはサーバーに位置を報告する
