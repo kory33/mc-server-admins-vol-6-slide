@@ -84,12 +84,11 @@
         - パケット ID は、当該 Minecraft パケットがどのような意味に解釈されるべきかを指定する
           - ここで言う「意味」は、例えば、プレーヤーの座標同期指示 ([Synchronize Player Position](https://wiki.vg/index.php?title=Protocol&oldid=17749#Synchronize_Player_Position)) なのか、エンティティをスポーンさせる指示 ([Spawn Entity](https://wiki.vg/index.php?title=Protocol&oldid=17749#Spawn_Entity)) なのか、など
         - パケットの意味は、パケットデータを「フィールド」の列に解釈する方法を定める
-          - フィールドはパケットの
           - 例えば、プレーヤーの座標同期指示 ([Synchronize Player Position](https://wiki.vg/index.php?title=Protocol&oldid=17749#Synchronize_Player_Position)) のパケットならば、プレーヤーの座標、視点方向、値が相対的かどうかのフラグ、Teleport ID (後述)、乗り物から降りた状態でいるかどうかの指定、といったフィールドを持つ
     - オプショナルフィールド
       - Minecraft パケットは、すべてのフィールドが必須となっているわけではない
       - 「他のフィールドの値に依存して、値があるかどうかが決まる」フィールドがある
-      - [wiki.vg](https://wiki.vg/index.php?title=Protocol&oldid=17749) ではこれを `Optional`
+      - [wiki.vg](https://wiki.vg/index.php?title=Protocol&oldid=17749) ではこれを `Optional field` と呼んでいる
       - 例:
         - [Stop Sound](https://wiki.vg/index.php?title=Protocol&oldid=16907#Stop_Sound) パケットを考える
         - (TODO: 表を挿入して口頭で説明する)
@@ -101,9 +100,11 @@
         - クライアントは、送られてきた `Keep Alive ID` を 30 秒以内に [Keep Alive (Serverbound)](https://wiki.vg/index.php?title=Protocol&oldid=17749#Keep_Alive_.28serverbound.29) パケットにて送り返さねばならない
         - クライアントが 30 秒返事をしなかった場合、サーバーは [Disconnect](https://wiki.vg/index.php?title=Protocol&oldid=17749#Disconnect_.28play.29) パケットを送出し、TCPコネクションを切断する
 
+<!--
     - エンティティ (プレーヤー含む) の位置情報と速度情報のやり取り
       - プレーヤーはサーバーに位置を報告する
         - TODO: 具体的なパケット名を出して説明する
+-->
 
   - バージョン依存性
     - Minecraft プロトコルには「プロトコルバージョン」がある
